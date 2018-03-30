@@ -97,8 +97,8 @@
 #define YAW_ANGLE_MIN        -40
 #define LEFT_FRICTION        TIM12->CCR1
 #define RIGHT_FIRCTION       TIM12->CCR2
-#define LEFT_42_FRACTION     TIM8->CCR4
-#define RIGHT_42_FRACTION    TIM8->CCR3
+#define LEFT_42_FRACTION     TIM4->CCR1
+#define RIGHT_42_FRACTION    TIM4->CCR2
 /**************************shot  setting********************************/
 /* shot speed */
 #define DEFAULT_FRIC_WHEEL_SPEED 2500 //maximum value is 2500

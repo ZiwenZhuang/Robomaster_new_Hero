@@ -42,8 +42,16 @@ void pwm_device_init(void)
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); // beep
   HAL_TIM_PWM_Start(&htim12, TIM_CHANNEL_2); // friction wheel //TODO
   HAL_TIM_PWM_Start(&htim12, TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_3); // 42mm fraction
-	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_4); // 42mm fraction
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1); // 42mm fraction
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);	// 42mm fraction
+	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_4);
+	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_4);
 	TIM8->CCR1=0;	//丝杆电机1运转
 	TIM8->CCR4=0;	//丝杆电机2运转
 	TIM8->CCR2=0;	//丝杆电机方向
