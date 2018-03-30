@@ -20,6 +20,7 @@ void turn_on_friction_wheel(uint16_t spd)
   RIGHT_FIRCTION = spd;
 	LEFT_42_FRACTION = spd;
 	RIGHT_42_FRACTION = spd;
+	printf("turn_on\r\n");
 }
 
 void turn_off_friction_wheel(void)
@@ -28,6 +29,7 @@ void turn_off_friction_wheel(void)
   RIGHT_FIRCTION = 1000;
 	LEFT_42_FRACTION = 1000;
 	RIGHT_42_FRACTION = 1000;
+	printf("turn_off\r\n");
 }
 
 void mpu_heat_ctrl(uint16_t pwm_pulse)
@@ -42,8 +44,8 @@ void pwm_device_init(void)
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); // beep
   HAL_TIM_PWM_Start(&htim12, TIM_CHANNEL_2); // friction wheel //TODO
   HAL_TIM_PWM_Start(&htim12, TIM_CHANNEL_1);
-  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1); // 42mm fraction
-  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);	// 42mm fraction
+  HAL_StatusTypeDef rtn_c1 = HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1); // 42mm fraction
+  HAL_StatusTypeDef rtn_c2 = HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_2);	// 42mm fraction
 	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
 	HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_3);
@@ -60,6 +62,9 @@ void pwm_device_init(void)
 	TIM2->CCR2=0;	//辅助轮不转
 	TIM2->CCR3=1600;	//舵机1
 	TIM2->CCR4=5200;	//舵机2
+	
+	printf("ch1: %d\r\n",rtn_c1);
+	printf("ch2: %d\r\n",rtn_c2);
 }
 
 uint8_t sd_insert(void)

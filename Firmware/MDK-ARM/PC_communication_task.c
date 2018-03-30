@@ -57,7 +57,7 @@ void PC_send_task(void const * argu){
 		switch (step){
 			case 0:
 			{
-				send_all_pack_to_pc();
+				//send_all_pack_to_pc();
 				step++;
 			}
 			break;
