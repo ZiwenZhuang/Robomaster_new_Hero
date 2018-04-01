@@ -62,15 +62,15 @@ void shoot_task(void const *argu)
 				#if 1
         shoot_time_ms = HAL_GetTick() - shoot_time_last;
         shoot_time_last = HAL_GetTick();
-				printf("shoot time %d %d\r\n",shoot_time_ms,shoot_time_last);
+				//printf("shoot time %d %d\r\n",shoot_time_ms,shoot_time_last);
 				#endif
         
 				shoot.fric_wheel_run = (remote_info.rc.s1 == RC_UP || pc_rece_mesg.shoot_control_data.fric_wheel_run);   
         //trig.key = get_trigger_key_state();
        
 				uint8_t is_controllable =  gimbal_is_controllable();
-				printf("fric_wheel_run :%d\r\n",shoot.fric_wheel_run);
-				printf("is_controllable: %d\r\n",is_controllable);
+				//printf("fric_wheel_run :%d\r\n",shoot.fric_wheel_run);
+				//printf("is_controllable: %d\r\n",is_controllable);
         if (shoot.fric_wheel_run /*&& is_controllable*/)
         {
 					turn_on_friction_wheel(shoot.fric_wheel_spd);

@@ -29,7 +29,7 @@ void turn_off_friction_wheel(void)
   RIGHT_FIRCTION = 1000;
 	LEFT_42_FRACTION = 1000;
 	RIGHT_42_FRACTION = 1000;
-	printf("turn_off\r\n");
+	//printf("turn_off\r\n");
 }
 
 void mpu_heat_ctrl(uint16_t pwm_pulse)

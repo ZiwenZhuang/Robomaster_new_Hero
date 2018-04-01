@@ -15,10 +15,10 @@ void testRemoteTask(){
 	{
 	
 	#if 1
-	printf("RC_CtrlData: ch0 %d, ch1 %d, ch2 %d, ch3 %d, s1 %d, s2 %d times %d\r\n",
+	/*printf("RC_CtrlData: ch0 %d, ch1 %d, ch2 %d, ch3 %d, s1 %d, s2 %d times %d\r\n",
 					remote_info.rc.ch0,remote_info.rc.ch1,
 					remote_info.rc.ch2,remote_info.rc.ch3,
-					remote_info.rc.s1,remote_info.rc.s2,cnt1++);
+					remote_info.rc.s1,remote_info.rc.s2,cnt1++);*/
 	#endif
 		/*
 		printf("Remote Raw Data:"); 

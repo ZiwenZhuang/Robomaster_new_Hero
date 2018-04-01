@@ -42,10 +42,12 @@ void test_task( const void* argu){
 		// 英雄车丝杆电机控制代码
 		if (KEY_Q)
 		{
+			puts("Q");
 			send_gimbal_cur(0,1000,0);	//投弹出
 		}
 		else if (KEY_E)
 		{
+			puts("E");
 			send_gimbal_cur(0,-1000,0);	//投弹回
 		}
 		else
@@ -54,6 +56,7 @@ void test_task( const void* argu){
 		}
 		if (KEY_F)	//舵机状态改变
 		{
+			puts("F");
 			//TIM2->CCR3=5200;	//舵机1拖拽
 			//TIM2->CCR4=1600;	//舵机2拖拽
 			TIM2->CCR3=6800-TIM2->CCR3;
@@ -68,7 +71,9 @@ void test_task( const void* argu){
 			
 		}*/
 		if (KEY_Z)
-		{			//TIM2->CCR2=40000;	//辅助轮运转，再按停止
+		{
+			puts("Z");
+			//TIM2->CCR2=40000;	//辅助轮运转，再按停止
 			TIM2->CCR2=40000-TIM2->CCR2;
 			TIM2->CCR1=0;
 			osDelay(200);
